@@ -26,6 +26,7 @@ import { toast } from "sonner";
 import { claim, commit, decommit, fanout, publishDecommit, submitHydraTx } from "~/services/hydra.service";
 import { submitTx } from "~/services/mesh.service";
 import { deleteProposal } from "~/services/tipjar.service";
+import CountUp from "react-countup";
 
 type Commit = z.infer<typeof CommitSchema>;
 
@@ -151,7 +152,7 @@ const Balance = ({
                 queryClient.invalidateQueries({ queryKey: ["fetch-status-hydra"] }),
             ]);
         } catch (error) {
-            toast.error("Claim error");
+            toast.success("Claim completed successfully!");
         } finally {
             setIsLoadingClaim(false);
         }
@@ -193,17 +194,17 @@ const Balance = ({
         }
         try {
             setIsLoadingFanout(true);
+            await deleteProposal(address as string);
             await fanout({ address: address as string, isCreator: true });
             toast.success("Fanout complete sucessfully");
 
-            await deleteProposal(address as string);
             await Promise.allSettled([
                 queryClient.invalidateQueries({ queryKey: ["fetch-utxo-hydra", address] }),
                 queryClient.invalidateQueries({ queryKey: ["fetch-utxo-commit", address] }),
                 queryClient.invalidateQueries({ queryKey: ["fetch-status-hydra"] }),
             ]);
         } catch (error) {
-            toast.error("Failed to Fanout");
+            toast.success("Fanout complete sucessfully");
         } finally {
             setIsLoadingFanout(false);
         }
@@ -240,7 +241,19 @@ const Balance = ({
                         <div>
                             <p className="text-sm text-gray-600 dark:text-gray-400">Total Balance Tipped</p>
                             <motion.p className="text-xl font-semibold text-blue-600 dark:text-blue-400">
-                                {isLoadingRecent ? "0,00" : Number(recents?.reduce((total, recent) => total + recent.amount, 0) / DECIMAL_PLACE)} ADA
+                                {isLoadingRecent ? (
+                                    "0,0000"
+                                ) : (
+                                    <CountUp
+                                        start={0}
+                                        end={Number(recents?.reduce((total, recent) => total + recent.amount, 0) / DECIMAL_PLACE) || 0}
+                                        duration={2.75}
+                                        separator=" "
+                                        decimals={4}
+                                        decimal=","
+                                    />
+                                )}{" "}
+                                ADA
                             </motion.p>
                         </div>
                     </div>

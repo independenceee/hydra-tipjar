@@ -26,19 +26,19 @@ As of September 2025, HydraTipJar is actively developed, with a focus on Hydra i
 
 ### Key Benefits
 
--   **Speed**: Tips are processed in under 1 second via Hydra's off-chain state channels, perfect for live interactions during streams or events.
--   **Low Costs**: Transaction fees are negligible (<0.01 ADA), enabling true micropayments for small tips or donations.
--   **Decentralized**: Peer-to-peer tipping with no intermediaries, ensuring creators receive 100% of their tips (minus minimal network fees).
--   **Scalability**: Hydra supports thousands of TPS per head, allowing communities to scale without L1 congestion.
--   **Security**: Aiken-compiled Plutus scripts ensure robust smart contracts, with L1 settlement for withdrawals guaranteeing finality.
--   **Accessibility**: Supports major Cardano wallets and a responsive UI for desktop and mobile users.
+- **Speed**: Tips are processed in under 1 second via Hydra's off-chain state channels, perfect for live interactions during streams or events.
+- **Low Costs**: Transaction fees are negligible (<0.01 ADA), enabling true micropayments for small tips or donations.
+- **Decentralized**: Peer-to-peer tipping with no intermediaries, ensuring creators receive 100% of their tips (minus minimal network fees).
+- **Scalability**: Hydra supports thousands of TPS per head, allowing communities to scale without L1 congestion.
+- **Security**: Aiken-compiled Plutus scripts ensure robust smart contracts, with L1 settlement for withdrawals guaranteeing finality.
+- **Accessibility**: Supports major Cardano wallets and a responsive UI for desktop and mobile users.
 
 ### Use Cases
 
--   **Content Creators**: Streamers on Twitch or YouTube can share TipJar links or QR codes for instant fan support.
--   **Open-Source Developers**: Accept micro-donations for GitHub contributions or software releases.
--   **Communities**: Crowdfund projects or community pots with multi-signature withdrawal options.
--   **Charities & Causes**: Transparent donation tracking with on-chain metadata for accountability.
+- **Content Creators**: Streamers on Twitch or YouTube can share TipJar links or QR codes for instant fan support.
+- **Open-Source Developers**: Accept micro-donations for GitHub contributions or software releases.
+- **Communities**: Crowdfund projects or community pots with multi-signature withdrawal options.
+- **Charities & Causes**: Transparent donation tracking with on-chain metadata for accountability.
 
 ---
 
@@ -46,32 +46,32 @@ As of September 2025, HydraTipJar is actively developed, with a focus on Hydra i
 
 HydraTipJar combines intuitive user experience with powerful blockchain technology. Below is a detailed breakdown of its core features:
 
--   **Connect Cardano Wallets**  
-    Seamlessly integrates with popular browser-based Cardano wallets (Nami, Eternl, Flint, Lace, Typhon, Vespr, Yoroi, Nufi) using the CIP-30 standard. Users can connect in one click, switch between mainnet and preview/testnet, and sign transactions securely. Multi-wallet support ensures flexibility for advanced users.
+- **Connect Cardano Wallets**  
+  Seamlessly integrates with popular browser-based Cardano wallets (Nami, Eternl, Flint, Lace, Typhon, Vespr, Yoroi, Nufi) using the CIP-30 standard. Users can connect in one click, switch between mainnet and preview/testnet, and sign transactions securely. Multi-wallet support ensures flexibility for advanced users.
 
--   **Receive Instant ADA Tips**  
-    Creators generate a unique TipJar link (e.g., `tipjar.cardano2vn.io/tipper/{wallet_address}`) or QR code to share on social platforms, stream overlays, or profile bios. Tips are processed off-chain in Hydra Heads for near-instant confirmation (<1s) and include optional message fields for personalized fan interactions.
+- **Receive Instant ADA Tips**  
+  Creators generate a unique TipJar link (e.g., `tipjar.cardano2vn.io/tipper/{wallet_address}`) or QR code to share on social platforms, stream overlays, or profile bios. Tips are processed off-chain in Hydra Heads for near-instant confirmation (<1s) and include optional message fields for personalized fan interactions.
 
--   **Recent Tips Dashboard**  
-    A real-time dashboard displays tip history, including sender wallet addresses, amounts (in ADA or lovelace), timestamps, and attached messages. Features include filtering by date or sender, sorting by amount, and aggregate stats (total received, top tippers). Powered by WebSockets for live updates during streams.
+- **Recent Tips Dashboard**  
+  A real-time dashboard displays tip history, including sender wallet addresses, amounts (in ADA or lovelace), timestamps, and attached messages. Features include filtering by date or sender, sorting by amount, and aggregate stats (total received, top tippers). Powered by WebSockets for live updates during streams.
 
--   **Creator Registration & Profile Management**  
-    Easy onboarding: connect a wallet, set up a profile (name, bio, avatar, social links), and initialize a personal Hydra Head. Creators can manage multiple profiles for different platforms (e.g., Twitch, YouTube). Optional NFT-based profiles store metadata on-chain for verifiable identity.
+- **Creator Registration & Profile Management**  
+  Easy onboarding: connect a wallet, set up a profile (name, bio, avatar, social links), and initialize a personal Hydra Head. Creators can manage multiple profiles for different platforms (e.g., Twitch, YouTube). Optional NFT-based profiles store metadata on-chain for verifiable identity.
 
--   **Secure ADA Withdrawals**  
-    Tips accumulate in a Hydra Head and can be withdrawn to an L1 wallet in batches. Multi-signature support enables community-managed tip pools. Hydra's contestable commit mechanism ensures security against double-spending, with withdrawals settling on L1 in 5-10 minutes.
+- **Secure ADA Withdrawals**  
+  Tips accumulate in a Hydra Head and can be withdrawn to an L1 wallet in batches. Multi-signature support enables community-managed tip pools. Hydra's contestable commit mechanism ensures security against double-spending, with withdrawals settling on L1 in 5-10 minutes.
 
--   **Hydra & Aiken Integration**  
-    The backend uses Aiken to write concise, secure smart contracts that compile to Plutus Core. Hydra's state channels handle off-chain transactions, supporting over 1,000 TPS per head. The system is extensible to support Cardano native tokens beyond ADA.
+- **Hydra & Aiken Integration**  
+  The backend uses Aiken to write concise, secure smart contracts that compile to Plutus Core. Hydra's state channels handle off-chain transactions, supporting over 1,000 TPS per head. The system is extensible to support Cardano native tokens beyond ADA.
 
--   **Dockerized Deployment**  
-    Fully containerized setup with Docker Compose, including frontend (Next.js), Hydra node (Rust), PostgreSQL for off-chain logs, and Nginx for reverse proxy. Deploy locally or scale to cloud platforms like AWS, Vercel, or DigitalOcean with minimal configuration.
+- **Dockerized Deployment**  
+  Fully containerized setup with Docker Compose, including frontend (Next.js), Hydra node (Rust), PostgreSQL for off-chain logs, and Nginx for reverse proxy. Deploy locally or scale to cloud platforms like AWS, Vercel, or DigitalOcean with minimal configuration.
 
--   **Enhanced UI/UX**  
-    Built with TailwindCSS for responsive design, auto-detecting dark/light modes. Radix UI ensures accessibility (WCAG-compliant). Real-time balance updates and robust error handling improve usability, even on unstable connections.
+- **Enhanced UI/UX**  
+  Built with TailwindCSS for responsive design, auto-detecting dark/light modes. Radix UI ensures accessibility (WCAG-compliant). Real-time balance updates and robust error handling improve usability, even on unstable connections.
 
--   **Analytics & Social Sharing**  
-    Integrated analytics (via Recharts) provide visualizations of tip trends, top tippers, and monthly summaries. One-click sharing generates QR codes or links for X, Discord, Telegram, or stream overlays.
+- **Analytics & Social Sharing**  
+  Integrated analytics (via Recharts) provide visualizations of tip trends, top tippers, and monthly summaries. One-click sharing generates QR codes or links for X, Discord, Telegram, or stream overlays.
 
 ---
 
@@ -107,7 +107,6 @@ Follow these steps to set up HydraTipJar locally or deploy it for production. Pr
     ```
 
 3. **Configure Environment**
-
     - Copy the example env file: `cp .env.example .env`
     - Edit `.env`:
         - `BLOCKFROST_API_KEY`: Obtain from [Blockfrost](https://blockfrost.io/).
@@ -141,9 +140,9 @@ Follow these steps to set up HydraTipJar locally or deploy it for production. Pr
 
 **Troubleshooting**:
 
--   **Wallet Issues**: Ensure CIP-30 compatibility and browser extensions are enabled.
--   **Hydra Errors**: Verify node sync with `hydra-node --help`. Check network alignment (preview/mainnet).
--   **Test ADA**: Request from the Cardano testnet faucet for preview network.
+- **Wallet Issues**: Ensure CIP-30 compatibility and browser extensions are enabled.
+- **Hydra Errors**: Verify node sync with `hydra-node --help`. Check network alignment (preview/mainnet).
+- **Test ADA**: Request from the Cardano testnet faucet for preview network.
 
 ---
 
@@ -151,51 +150,47 @@ Follow these steps to set up HydraTipJar locally or deploy it for production. Pr
 
 The project follows a modular monorepo structure for maintainability and scalability:
 
--   **`src/`** — Core frontend code (TypeScript/React)
+- **`src/`** — Core frontend code (TypeScript/React)
+    - `components/` — Reusable UI elements (e.g., `WalletConnectButton.tsx`, `TipModal.tsx`, `DashboardChart.tsx`)
+    - `hooks/` — Custom React hooks (e.g., `useHydraState.ts`, `useWalletTx.ts`)
+    - `services/` — API integrations (e.g., `hydraService.ts`, `explorerService.ts` for Blockfrost/Koios)
+    - `txbuilders/` — Transaction logic (e.g., `tipTxBuilder.ts` for off-chain sends)
+    - `constants/` — Configs (e.g., `walletList.ts`, `networkParams.ts`)
+    - `types/` — TypeScript interfaces (e.g., `HydraHead`, `TipEvent`)
+    - `utils/` — Helpers (e.g., `formatLovelace.ts`, `validateSignature.ts`)
 
-    -   `components/` — Reusable UI elements (e.g., `WalletConnectButton.tsx`, `TipModal.tsx`, `DashboardChart.tsx`)
-    -   `hooks/` — Custom React hooks (e.g., `useHydraState.ts`, `useWalletTx.ts`)
-    -   `services/` — API integrations (e.g., `hydraService.ts`, `explorerService.ts` for Blockfrost/Koios)
-    -   `txbuilders/` — Transaction logic (e.g., `tipTxBuilder.ts` for off-chain sends)
-    -   `constants/` — Configs (e.g., `walletList.ts`, `networkParams.ts`)
-    -   `types/` — TypeScript interfaces (e.g., `HydraHead`, `TipEvent`)
-    -   `utils/` — Helpers (e.g., `formatLovelace.ts`, `validateSignature.ts`)
+- **`contract/`** — Smart contract sources
+    - Aiken scripts: `tip_validator.aiken` (validates tips), `head_setup.aiken` (initializes Hydra Heads)
+    - Compiled outputs: Plutus JSON for deployment
 
--   **`contract/`** — Smart contract sources
+- **`public/`** — Static assets
+    - Images: Hydra logo, wallet icons
+    - Favicon and PWA manifest
 
-    -   Aiken scripts: `tip_validator.aiken` (validates tips), `head_setup.aiken` (initializes Hydra Heads)
-    -   Compiled outputs: Plutus JSON for deployment
+- **`env/`** — Environment configurations
+    - `.env.example`: Template for API keys and settings
+    - Docker-specific overrides
 
--   **`public/`** — Static assets
+- **`docker-compose.yml`** — Orchestrates services: Next.js, Hydra node, PostgreSQL, Nginx
 
-    -   Images: Hydra logo, wallet icons
-    -   Favicon and PWA manifest
+- **`scripts/`** — Deployment and build utilities (e.g., `deploy-contracts.sh`)
 
--   **`env/`** — Environment configurations
-
-    -   `.env.example`: Template for API keys and settings
-    -   Docker-specific overrides
-
--   **`docker-compose.yml`** — Orchestrates services: Next.js, Hydra node, PostgreSQL, Nginx
-
--   **`scripts/`** — Deployment and build utilities (e.g., `deploy-contracts.sh`)
-
--   **Root Files**:
-    -   `README.md` — Project documentation
-    -   `CONTRIBUTING.md` — Contribution guidelines
-    -   `LICENSE` — MIT License
-    -   `package.json` — Dependencies and scripts
+- **Root Files**:
+    - `README.md` — Project documentation
+    - `CONTRIBUTING.md` — Contribution guidelines
+    - `LICENSE` — MIT License
+    - `package.json` — Dependencies and scripts
 
 ---
 
 ## 🧑‍💻 Developer Notes
 
--   **Hydra Workflow**: Users commit ADA to a Hydra Head on L1, tip off-chain, and close the Head to withdraw. Transactions are validated by Aiken scripts.
--   **Testing**: Run `npm test` for Jest unit tests. End-to-end tests use Playwright in `/tests/`.
--   **Extending**: Add new wallets in `src/constants/wallets.ts`. Write custom validators in Aiken and compile with `aiken build`.
--   **Mainnet Deployment**: Set `.env` to `mainnet`, deploy contracts via `cardano-cli` or Mesh SDK.
--   **Performance**: Hydra scales linearly with participants. Benchmark with `/benchmarks/` scripts.
--   **Security**: Aiken reduces smart contract errors by ~50% compared to raw Plutus. Hydra's contestable commits prevent double-spending.
+- **Hydra Workflow**: Users commit ADA to a Hydra Head on L1, tip off-chain, and close the Head to withdraw. Transactions are validated by Aiken scripts.
+- **Testing**: Run `npm test` for Jest unit tests. End-to-end tests use Playwright in `/tests/`.
+- **Extending**: Add new wallets in `src/constants/wallets.ts`. Write custom validators in Aiken and compile with `aiken build`.
+- **Mainnet Deployment**: Set `.env` to `mainnet`, deploy contracts via `cardano-cli` or Mesh SDK.
+- **Performance**: Hydra scales linearly with participants. Benchmark with `/benchmarks/` scripts.
+- **Security**: Aiken reduces smart contract errors by ~50% compared to raw Plutus. Hydra's contestable commits prevent double-spending.
 
 For advanced setup, refer to [Hydra Docs](https://hydra.family/head-protocol/) and [Aiken Book](https://aiken-lang.org/book/).
 
@@ -221,9 +216,9 @@ We welcome contributions to make HydraTipJar even better! Whether you're fixing 
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for details:
 
--   Follow ESLint/Prettier for code style.
--   Include tests for new features.
--   Discuss breaking changes in issues first.
+- Follow ESLint/Prettier for code style.
+- Include tests for new features.
+- Discuss breaking changes in issues first.
 
 Report bugs or suggest features via GitHub Issues. Join the Cardano developer community on Discord or X for collaboration.
 
@@ -231,14 +226,14 @@ Report bugs or suggest features via GitHub Issues. Join the Cardano developer co
 
 ## 📚 Documentation & Resources
 
--   [API Reference](docs/API.md) — Details on endpoints and data types
--   [Hydra Setup Guide](docs/hydra-setup.md) — Node configuration and troubleshooting
--   [Smart Contract Breakdown](docs/contracts.md) — Aiken script explanations
--   Cardano Ecosystem:
-    -   [Cardano Developer Portal](https://developers.cardano.org/)
-    -   [Hydra RFCs](https://github.com/cardano-scaling/hydra)
-    -   [Mesh SDK Docs](https://meshjs.dev/)
-    -   [Aiken Language Book](https://aiken-lang.org/book/)
+- [API Reference](docs/API.md) — Details on endpoints and data types
+- [Hydra Setup Guide](docs/hydra-setup.md) — Node configuration and troubleshooting
+- [Smart Contract Breakdown](docs/contracts.md) — Aiken script explanations
+- Cardano Ecosystem:
+    - [Cardano Developer Portal](https://developers.cardano.org/)
+    - [Hydra RFCs](https://github.com/cardano-scaling/hydra)
+    - [Mesh SDK Docs](https://meshjs.dev/)
+    - [Aiken Language Book](https://aiken-lang.org/book/)
 
 ---
 
