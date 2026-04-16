@@ -27,8 +27,8 @@ export default function Page() {
                 <section className="w-full mb-6">
                     <Status
                         title="There is now a head available for you to access and below is the current state of your head"
-                        loading={isLoadingHeadStatus}
-                        data={headStatus as string}
+                        loading={false}
+                        data={"Open"}
                     />
                 </section>
 

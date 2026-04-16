@@ -14,6 +14,8 @@
 
 ---
 
+curl -L -O https://github.com/cardano-scaling/hydra/releases/download/1.2.0/hydra-x86_64-linux-1.2.0.zip
+
 </div>
 
 ## About Hydra TipJar

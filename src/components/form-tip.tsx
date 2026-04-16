@@ -340,7 +340,7 @@ const FormTip = function ({
                 </div>
             ) : (
                 <>
-                    {status === "OPEN" && (
+                    {true && (
                         <div className="mt-6 flex border-b border-gray-200 dark:border-slate-700">
                             {(["tip", "commit", "decommit"] as const).map((tab) => (
                                 <button
@@ -364,7 +364,7 @@ const FormTip = function ({
                         </div>
                     )}
                     <AnimatePresence mode="wait">
-                        {status !== "OPEN" ? (
+                        {false ? (
                             <motion.div
                                 key="initial-commit"
                                 initial={{ opacity: 0, y: 20 }}
